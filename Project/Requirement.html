@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client Requirement Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* body{
+      background-image: url(Img/img.jpg);
+  
+    } */
+    .hero-image {
+  background-image: url("Img/img.jpg");
+  background-color: #cccccc;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      font-weight: bold;
+    }
+    .preview-image {
+      max-width: 200px;
+      margin-top: 10px;
+    }
+    h2{
+        margin-inline:12%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container hero-image">
+    <h2>Client Requirement Form</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+      </div>
+      <div class="form-group">
+        <label for="image">Demo Image:</label>
+        <input type="file" class="form-control-file" id="image" accept="image/*" onchange="previewImage(event)">
+        <img id="image-preview" class="preview-image" src="#" alt="Preview">
+      </div>
+      <div class="form-group">
+        <label for="requirements">Requirements:</label>
+        <textarea class="form-control" id="requirements" rows="5" placeholder="Enter your requirements"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button><br>
+      
+    </form>
+  </div>
+
+  <script>
+    function previewImage(event) {
+      var reader = new FileReader();
+      reader.onload = function() {
+        var preview = document.getElementById('image-preview');
+        preview.src = reader.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+</body>
+</html>
